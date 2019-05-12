@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/game"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorGreen"
+    tools:context=".Game">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/game_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlue"
+        android:paddingLeft="125dp"
+        app:title="@string/app_name" />
+
+    <TextView
+        android:id="@+id/tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/game_title"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true"
+        android:text="请输入四个数字"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/game_title"
+        android:layout_marginTop="250dp"
+        android:layout_centerInParent="true"
+        android:inputType="number"/>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="@string/submit"
+        android:background="@color/colorWhite"
+        android:layout_alignParentBottom="true"
+        android:onClick="submit"/>
+
+
+
+</RelativeLayout>
