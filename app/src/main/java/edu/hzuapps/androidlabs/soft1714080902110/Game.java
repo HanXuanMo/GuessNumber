@@ -32,13 +32,20 @@ import java.io.IOException;
 
 public class Game extends AppCompatActivity {
 
+//    游戏成功插入记录
     private static final String INSERT_DATA = "insert into rank (name, grade) values (?,?)";
+
+//    删除成绩10名以后的记录
+    private static final String DELETE_DATA = "delete from rank where id not in (select id from rank order by grade desc limit 0,10)";
 
     private static final String TAG = "Game";
 
 //    拍照
+//    拍照功能设为1，方便兼容将来添加功能
     public static final int TAKE_PHOTO = 1;
+//    声明游戏的默认布局，方便背景的修改
     private RelativeLayout game;
+//    声明欲修改布局背景的图片，方便修改调用
     private File outputImage;
 
 //    游戏功能
@@ -217,9 +224,10 @@ public class Game extends AppCompatActivity {
         RankListSQLHelper helper = new RankListSQLHelper(this, "rank.db", null, 1);
         SQLiteDatabase db = helper.getWritableDatabase();
         db.execSQL(INSERT_DATA, new String[] {"本人", String.valueOf(grade)});
-        db.delete("rank", "id > ?", new String[] {"10"});
+        db.execSQL(DELETE_DATA);
     }
 
+//    游戏完成后的弹窗提示
     private void showAlertDialog() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(Game.this);
         dialog.setTitle("o(￣▽￣)ｄ good");

@@ -6,6 +6,7 @@ public class Number {
     private int shi;
     private int ge;
 
+//    实现随机数的获取
     Number() {
         do {
             int number = (int) (123 + Math.random() * (9999 - 123 + 1));
@@ -16,6 +17,7 @@ public class Number {
         } while (!((qian!=bai) && (qian!=shi) && (qian!=ge) && (bai!=shi) && (bai!=ge) && (shi!=ge)));
     }
 
+//    分别获取随机数的千位上的数字、百位、十位、个位
     Number(int number) {
         qian = number / 1000;
         bai = (number % 1000) / 100;

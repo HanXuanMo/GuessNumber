@@ -22,12 +22,14 @@ public class RankList extends AppCompatActivity {
 
         sqlHelper = new RankListSQLHelper(this, "rank.db", null, 1);
 
+//        利用List的记录完成ListView
         initPeople();
         PeopleAdapter adapter = new PeopleAdapter(RankList.this, R.layout.rank_item, peopleList);
         ListView listView = findViewById(R.id.rank_list);
         listView.setAdapter(adapter);
     }
 
+//    将数据库中记录加入List
     private void initPeople() {
         SQLiteDatabase db = sqlHelper.getWritableDatabase();
         Cursor cursor = db.query("rank", null, null,

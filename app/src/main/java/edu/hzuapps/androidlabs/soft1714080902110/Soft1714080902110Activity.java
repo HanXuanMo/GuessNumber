@@ -12,7 +12,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Soft1714080902110Activity extends AppCompatActivity {
-    //双击退出
+//    双击退出参数
     public boolean isExit = false;
 
     @Override
@@ -20,10 +20,12 @@ public class Soft1714080902110Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.soft_1714080902110_activity);
 
+//        布局控件获取
         Button start_game = findViewById(R.id.start_game);
         Button rank_list = findViewById(R.id.rank_list);
         Button country_list = findViewById(R.id.country_list);
 
+//        实现各按钮跳转
         start_game.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +50,7 @@ public class Soft1714080902110Activity extends AppCompatActivity {
         });
     }
 
-    //双击退出
+//    返回键检测
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             exit();
@@ -56,6 +58,7 @@ public class Soft1714080902110Activity extends AppCompatActivity {
         return false;
     }
 
+//    双击退出功能实现
     private void exit() {
         Timer timer;
         if (!isExit) {

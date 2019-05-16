@@ -17,6 +17,7 @@
         android:paddingLeft="125dp"
         app:title="@string/app_name" />
 
+    <!--游戏文字提示-->
     <TextView
         android:id="@+id/tip"
         android:layout_width="wrap_content"
@@ -27,6 +28,7 @@
         android:text="请输入四个数字"
         android:textSize="20sp"/>
 
+    <!--玩家猜数输入-->
     <EditText
         android:id="@+id/input"
         android:layout_width="50dp"
@@ -37,6 +39,7 @@
         android:maxLength="4"
         android:inputType="number"/>
 
+    <!--确定按钮-->
     <Button
         android:id="@+id/submit"
         android:layout_width="match_parent"

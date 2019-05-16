@@ -14,6 +14,7 @@
         android:paddingLeft="125dp"
         app:title="全国排行榜" />
 
+    <!--分界线-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"

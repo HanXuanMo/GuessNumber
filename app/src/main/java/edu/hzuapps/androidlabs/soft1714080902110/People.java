@@ -4,6 +4,7 @@ public class People {
     private String name;
     private String score;
 
+//    方便Adapter的实现
     public People(String name, String score) {
         this.name = name;
         this.score = score;

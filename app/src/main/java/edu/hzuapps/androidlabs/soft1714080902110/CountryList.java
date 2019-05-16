@@ -19,8 +19,6 @@ import okhttp3.Response;
 
 public class CountryList extends AppCompatActivity {
 
-    private static final String TAG = "CountryList";
-
     private List<People> peopleList = new ArrayList<>();
 
     private static final String URL = "https://raw.githubusercontent.com/HanXuanMo/android-labs-2019/master/students/soft1714080902110/rank.json";
@@ -33,6 +31,7 @@ public class CountryList extends AppCompatActivity {
         initPeople();
     }
 
+//    向URL丢出请求并接收返回数据
     private void initPeople() {
         new Thread(new Runnable() {
             @Override
@@ -54,6 +53,7 @@ public class CountryList extends AppCompatActivity {
         }).start();
     }
 
+//    将返回的json数据解析并利用其完成ListView
     private void showResponse(final String response) {
         runOnUiThread(new Runnable() {
             @Override
@@ -64,8 +64,6 @@ public class CountryList extends AppCompatActivity {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         String name = jsonObject.getString("name");
                         String score = jsonObject.getString("score");
-                        Log.d(TAG, "showJson: " + name);
-                        Log.d(TAG, "showJson: " + score);
                         People people = new People(name, score);
                         peopleList.add(people);
                     }

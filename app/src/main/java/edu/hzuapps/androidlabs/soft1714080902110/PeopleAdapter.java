@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+
+//方便ListView实现
 public class PeopleAdapter extends ArrayAdapter<People> {
 
     private int resourceId;

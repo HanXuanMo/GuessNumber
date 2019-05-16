@@ -5,6 +5,8 @@
     android:gravity="center_vertical"
     android:layout_margin="5dp">
 
+    <!--ListView显示模板-->
+
     <TextView
         android:id="@+id/rank_name_show"
         android:layout_width="wrap_content"

@@ -6,8 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class RankListSQLHelper extends SQLiteOpenHelper {
 
-    private static final String INSERT_DATA = "insert into rank (name, grade) values (?,?)";
-
     private static final String CREATE_LIST = "create table rank (" +
             "id integer primary key AUTOINCREMENT," +
             "name varchar(20) NOT NULL," +
