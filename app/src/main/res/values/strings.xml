@@ -4,6 +4,7 @@
     <string name="rank_list">历史纪录</string>
     <string name="country_list">全国排行</string>
     <string name="title">猜数字小游戏</string>
+    <string name="tip_change">%1$dA%2$dB</string>
     <string name="rank_name_show">姓名：</string>
     <string name="rank_score_show">成绩：</string>
     <string name="change_background">改变背景</string>

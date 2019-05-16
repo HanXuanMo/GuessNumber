@@ -1,13 +1,11 @@
 package edu.hzuapps.androidlabs.soft1714080902110;
 
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -72,8 +70,6 @@ public class Game extends AppCompatActivity {
         outputImage = new File(getCacheDir(), "myImage.jpg");
         if (outputImage.exists()) {
             showBitmap();
-        } else {
-            game.setBackground(new ColorDrawable(getResources().getColor(R.color.colorGreen)));
         }
     }
 
@@ -160,14 +156,15 @@ public class Game extends AppCompatActivity {
         b = getB(number, inputNumber);
         if (grade >= 0) {
             switch (a) {
+                case 0:
                 case 1:
                 case 2:
                 case 3:
                     grade -= 20;
-                    tip.setText(a + "A" + b + "B");
+                    tip.setText(String.format(getResources().getString(R.string.tip_change), a, b));
                     break;
                 case 4:
-                    tip.setText(a + "A" + b + "B");
+                    tip.setText(String.format(getResources().getString(R.string.tip_change), a, b));
                     writeGrade();
                     showAlertDialog();
                     break;
